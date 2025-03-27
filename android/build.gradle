@@ -27,7 +27,7 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 30
-    namespace 'carnegietechnologies.gallery_saver'  // Add this line
+    namespace 'carnegietechnologies.gallery_saver'
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -38,6 +38,17 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+
+    // Add this block to set JVM target compatibility
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // Add this block to set Kotlin JVM target
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
 
